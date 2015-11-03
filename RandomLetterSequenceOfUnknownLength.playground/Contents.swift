@@ -77,6 +77,20 @@ Here is the implementation:
 
 */
 
-// Implement part one of the algorithm below
+// Get the length of the input string
+input.characters.count
+
+// Create an empty dictionary to store probabilities
+var letterProbabilities = [Character: Float]()
+
+// Loop over the list of letter counts
+for (letter, count) in letterCounts {
+    
+    // Add an entry to the probabilities dictionary
+    letterProbabilities[letter] = Float(count) / Float(input.characters.count) * 100
+}
+
+letterProbabilities
+
 
 
