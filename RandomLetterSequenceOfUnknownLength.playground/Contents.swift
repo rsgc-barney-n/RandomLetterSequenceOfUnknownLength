@@ -32,7 +32,6 @@ Your next step is to take what you have learned from prior playgrounds, and, wri
     * letters occur in the output string based on the proabability with which they occurred in the input string
 
 */
-// Write your algorithm here
 
 /*:
 
@@ -44,6 +43,28 @@ Here is the implementation:
 
 */
 // Implement part one of the algorithm below
+
+// create empty list of probabilities (dictionary)
+var letterCounts = [Character: Int]()
+
+// loop over the input string
+for letter in input.characters {
+    
+    // inspect each character
+    letter
+    // build the dictionary (list) of letter counts
+    if letterCounts[letter] == nil {
+        letterCounts[letter] = 1        // first time for this letter!
+    } else {
+        // we KNOW this letter is in the dictionary. WE KNOW IT
+        // ... so just add 1 to the current count
+        letterCounts[letter]! = letterCounts[letter]! + 1
+    }
+    
+}
+
+// This is the dictionary we have built – it actually shows letter COUNTS, not probabilities – YET.
+letterCounts
 
 /*:
 
