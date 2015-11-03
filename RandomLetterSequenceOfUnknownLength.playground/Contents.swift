@@ -92,5 +92,15 @@ for (letter, count) in letterCounts {
 
 letterProbabilities
 
+// Check: do the probabilities add to 100?
+var total: Float = 0.0
+for (letter, probability) in letterProbabilities {
+    total = total + probability
+    total
+}
+
+
+
+
 
 
