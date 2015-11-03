@@ -100,6 +100,53 @@ for (letter, probability) in letterProbabilities {
 }
 
 
+// Now I will build the output string
+var outputString: String = ""
+for _ in 1...30 {
+    
+    // Generate the random value
+    let newRandomValue = arc4random_uniform(1000)
+    
+    let newRandomValueFloat = Float(newRandomValue) / 10
+    
+    // As with Carlos' algorithm that we discussed in class:
+    // 1. loop through probabilties dictionary
+    // 2. add probabilities to determine an "upper value" for this letter
+    // 3. check for when the random value generated is LESS THAN the upper value of
+    //    probability range for current letter: when this happens, add the letter to the output sequence
+    var upperValue: Float = 0
+    for (letter, probability) in letterProbabilities {
+        
+        // determine the new upper value
+        upperValue += probability
+        
+        // When the random value is less than the running total, or upper value, use this letter
+        if (newRandomValueFloat < upperValue) {
+            
+            // add the letter
+            outputString += String(letter)
+            
+            // stop scanning probabilities (we found the one that matches)
+            // execution of code will continue with next iteration of outer "for" loop from 1 to 30
+            break   
+        }
+    }
+    
+}
+
+// Show the resulting string
+outputString
+
+// Verify that the string has the correct number of characters
+outputString.characters.count
+
+
+
+
+
+
+
+
 
 
 
