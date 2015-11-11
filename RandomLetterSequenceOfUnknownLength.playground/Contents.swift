@@ -78,4 +78,27 @@ Here is the implementation:
 */
 
 // Implement part one of the algorithm below
+input.characters.count
+
+var letterProbabilities = [Character:Float]()
+
+
+for (letter,count) in letterCounts {
+    letterProbabilities[letter] = Float (count) / Float (input.characters.count)*100
+}
+letterProbabilities
+
+
+var total :  Float = 0.0
+
+for(letter,probability) in letterProbabilities {
+    total = total + probability
+    
+    
+}
+
+total
+
+
+
 
